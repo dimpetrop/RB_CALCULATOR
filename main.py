@@ -2,6 +2,7 @@
 Distributed by the MIT License
 Made by dimpetrop.me (CorruptedGov)
 '''
+from time import sleep
 
 def writeRb():  #Writing RB prices (from RB1 to RB500)
     base = 4E8
@@ -27,7 +28,6 @@ def calcPrice(rbfrom, rbto):  #Calculating RB Price for current rb to goal rb
             counter += 1
         for rb in rbprices:
             sum += rb
-        print(rbprices)
         print("Price for RB: " + str(rbfrom) + " to " + str(rbto) + " is " + str(sum))
 
 while True:    
@@ -36,6 +36,8 @@ while True:
     writeRb()
 
     calcPrice(rbfrom, rbto)
+    print("\nApplication will exit in 10 seconds")
+    sleep(10)
     break
 
 
