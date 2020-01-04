@@ -3,6 +3,9 @@ Distributed by the MIT License
 Made by dimpetrop.me (CorruptedGov)
 '''
 from time import sleep
+import locale
+
+locale.setlocale(locale.LC_ALL, 'en_US')
 
 def writeRb():  #Writing RB prices (from RB1 to RB500)
     base = 4E8
@@ -28,7 +31,7 @@ def calcPrice(rbfrom, rbto):  #Calculating RB Price for current rb to goal rb
             counter += 1
         for rb in rbprices:
             sum += rb
-        print("Price for RB: " + str(rbfrom) + " to " + str(rbto) + " is " + str(sum))
+        print("Price for RB: " + str(rbfrom) + " to " + str(rbto) + " is " + str(locale.format("%d", sum, grouping=True)))
 
 while True:    
     rbfrom=int(input("Insert your current rebirth level "))
