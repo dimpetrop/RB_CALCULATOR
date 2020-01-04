@@ -31,8 +31,7 @@ def calcPrice(rbfrom, rbto):  #Calculating RB Price for current rb to goal rb
             counter += 1
         for rb in rbprices:
             sum += rb
-        print(rbprices)
-        print("Price for RB: " + str(rbfrom) + " to " + str(rbto) + " is " + str(locale.format("%d", sum, grouping=True)))
+        print("Price for RB: " + str(rbfrom) + " to " + str(rbto) + " is " + str(locale.format_string("%d", sum, grouping=True)))
 
 while True:    
     rbfrom=int(input("Insert your current rebirth level "))
