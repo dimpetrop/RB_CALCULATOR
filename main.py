@@ -8,7 +8,7 @@ import locale
 locale.setlocale(locale.LC_ALL, 'en_US')
 
 def writeRb():  #Writing RB prices (from RB1 to RB500)
-    base = 4E8
+    base = 4E9
     sum = rb = 0
     with open("rbs.txt", "w") as f:
         for i in range(1,501):
@@ -17,7 +17,7 @@ def writeRb():  #Writing RB prices (from RB1 to RB500)
             f.write(str(rb) + "    " + str(sum) + "\n")  #leaving some space between for reading purposes
 
 def calcPrice(rbfrom, rbto):  #Calculating RB Price for current rb to goal rb
-    base = 4E8
+    base = 4E9
     sum = 0
     counter = 1
     rbprices = []
@@ -31,6 +31,7 @@ def calcPrice(rbfrom, rbto):  #Calculating RB Price for current rb to goal rb
             counter += 1
         for rb in rbprices:
             sum += rb
+        print(rbprices)
         print("Price for RB: " + str(rbfrom) + " to " + str(rbto) + " is " + str(locale.format("%d", sum, grouping=True)))
 
 while True:    
@@ -42,10 +43,3 @@ while True:
     print("\nApplication will exit in 10 seconds")
     sleep(10)
     break
-
-
-
-            
-            
-
-
